@@ -16,6 +16,7 @@ class HotelCard extends Component {
     imageUrl: this.props.hotelCard.imageUrl,
     priceRange: this.props.hotelCard.priceRange,
     description: this.props.hotelCard.description,
+    restaurantUrl: this.props.hotelCard.restaurantUrl,
     openDesc: false,
     hotelVisible: true,
     restaurantVisible: false,
@@ -51,13 +52,32 @@ class HotelCard extends Component {
     const hotel = {
       id: this.state.id,
       hotelName: this.state.hotelName,
-      restaurantName: this.state.restaurantName,
       postalCode: this.state.postalCode,
-      chef: this.state.chef,
-      url: this.state.url,
+      hotelUrl: this.state.url,
       imageUrl: this.state.imageUrl,
       description: this.state.description,
       priceRange: this.state.priceRange
+    };
+    const restaurant = {
+      id: this.state.id,
+      restaurantName: this.state.restaurantName,
+      postalCode: this.state.postalCode,
+      chef: this.state.chef,
+      imageUrl: this.state.imageUrl,
+      restaurantUrl: this.state.restaurantUrl
+    };
+    const summary = {
+      id: this.state.id,
+      hotelName: this.state.hotelName,
+      postalCode: this.state.postalCode,
+      hotelUrl: this.state.url,
+      imageUrl: this.state.imageUrl,
+      description: this.state.description,
+      priceRange: this.state.priceRange,
+      openDesc: false,
+      restaurantName: this.state.restaurantName,
+      chef: this.state.chef,
+      restaurantUrl: this.state.restaurantUrl
     };
     return (
       <>
@@ -85,8 +105,10 @@ class HotelCard extends Component {
             </Nav>
           </Card.Header>
           {this.state.hotelVisible ? <Hotel hotel={hotel} /> : null}
-          {this.state.restaurantVisible ? <Restaurant /> : null}
-          {this.state.summaryVisible ? <Summary /> : null}
+          {this.state.restaurantVisible ? (
+            <Restaurant restaurant={restaurant} />
+          ) : null}
+          {this.state.summaryVisible ? <Summary summary={summary} /> : null}
         </Card>
       </>
     );

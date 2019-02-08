@@ -55,9 +55,9 @@ class Hotel extends Component {
         <ListGroup className="list-group-flush">
           <ListGroupItem variant="info">
             Price Range per Night :{" "}
-            {this.state.priceRange != "undefined" && this.state.priceRange}
-            {this.state.priceRange == "undefined" && (
-              <Badge className="warning">Contact the hotel for the price</Badge>
+            {this.state.priceRange !== "undefined" && this.state.priceRange}
+            {this.state.priceRange === "undefined" && (
+              <Badge variant="warning">Contact hotel</Badge>
             )}
           </ListGroupItem>
           <ListGroupItem>Postal Code : {this.state.postalCode}</ListGroupItem>

@@ -28,7 +28,8 @@ function findMutualChefsAndPCs(hotelsList, michelinsList) {
           url: hotelsList[i].url,
           priceRange: hotelsList[i].priceRange,
           imageUrl: hotelsList[i].imageUrl,
-          description: hotelsList[i].description
+          description: hotelsList[i].description,
+          restaurantUrl: michelinsList[j].url
         });
       }
     }

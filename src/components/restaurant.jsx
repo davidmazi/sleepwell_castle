@@ -9,14 +9,15 @@ class Restaurant extends Component {
     restaurantName: this.props.restaurant.restaurantName,
     postalCode: this.props.restaurant.postalCode,
     chef: this.props.restaurant.chef,
-    restaurantUrl: this.props.restaurant.restaurantUrl
+    restaurantUrl: this.props.restaurant.restaurantUrl,
+    imageUrl: this.props.restaurant.imageUrl
   };
   render() {
     return (
       <>
         <Card.Body>
-          <Card.Img className="m-2" variant="top" src={this.state.imageUrl} />
-          <Card.Title>{this.state.restaurantName}</Card.Title>
+          <Card.Img variant="top" src={this.state.imageUrl} />
+          <Card.Title className="m-2">{this.state.restaurantName}</Card.Title>
         </Card.Body>
         <ListGroup className="list-group-flush">
           <ListGroupItem variant="info">
