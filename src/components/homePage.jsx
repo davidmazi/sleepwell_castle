@@ -1,54 +1,81 @@
 import React, { Component } from "react";
-import Row from "react-bootstrap/Row.js";
+import InputGroup from "react-bootstrap/InputGroup";
+import FormControl from "react-bootstrap/FormControl";
+import PageProgress from "react-page-progress";
+import Jumbotron from "react-bootstrap/Jumbotron";
 import starredHotels from "../JSONFiles/starredRelaisChateaux.json";
-class HomePage extends Component {
-  state = { searchedHotels: [] };
+import CardColumns from "react-bootstrap/CardColumns";
+import HotelCard from "./hotelCard.jsx";
 
-  handleSearch = (location, duration) => {
-    const searchedHotels = starredHotels;
-    this.setState(searchedHotels);
-    // "hotelName":
-    // "restaurantName":
-    // "postalCode":
-    // "chef":
-    // "url":
-    // "price":
-    searchedHotels.forEach(hotel => {}); //TODO search same postalcode, maybe return a list, maybe return each item to render a react component....
+export class HomePage extends Component {
+  state = { starredHotels: starredHotels, searchedHotels: [], searchValue: "" };
+
+  handleChange = event => {
+    var searchedHotels = [];
+    var searchValue = event.target.value;
+    this.setState({ searchValue: searchValue });
+    starredHotels.forEach(hotel => {
+      if (
+        String(hotel.postalCode)
+          .toLowerCase()
+          .includes(searchValue.toLowerCase())
+      ) {
+        searchedHotels.push(hotel);
+      } else if (
+        String(hotel.hotelName)
+          .toLowerCase()
+          .includes(searchValue.toLowerCase())
+      ) {
+        searchedHotels.push(hotel);
+      } else if (
+        String(hotel.restaurantName)
+          .toLowerCase()
+          .includes(searchValue.toLowerCase())
+      ) {
+        searchedHotels.push(hotel);
+      } else if (
+        String(hotel.priceRange)
+          .toLowerCase()
+          .includes(searchValue.toLowerCase())
+      ) {
+        searchedHotels.push(hotel);
+      } else if (
+        String(hotel.chef)
+          .toLowerCase()
+          .includes(searchValue.toLowerCase())
+      ) {
+        searchedHotels.push(hotel);
+      }
+      this.setState({ searchedHotels });
+    });
   };
-
   render() {
     return (
-      <div>
-        <Row className="justify-content-md-center">
-          <div>
-            <span className="text-md m-2">Where would you like to stay?</span>
-            <input
-              key="locationInput"
-              className="text-md m-2"
-              placeholder="Location"
+      <>
+        <PageProgress color={"#6388d1"} height={4} />
+        <Jumbotron className="m-3">
+          <h3 className="text-center" style={{ color: "#6388d1" }}>
+            Search for Michelin Starred Relais & Chateaux Hotels
+          </h3>
+          <InputGroup className="mb-3">
+            <InputGroup.Prepend>
+              <InputGroup.Text id="addon">Search</InputGroup.Text>
+            </InputGroup.Prepend>
+            <FormControl
+              placeholder="Name, Location, Chef, Restaurant..."
+              aria-label="Username"
+              aria-describedby="addon"
+              value={this.state.searchValue}
+              onChange={this.handleChange}
             />
-          </div>
-          <div>
-            <span className="text-md m-2">
-              How many nights would you like to stay?
-            </span>
-            <input
-              key="durationInput"
-              className="text-md m-2"
-              placeholder="Duration"
-            />
-          </div>
-        </Row>
-        <Row className="justify-content-md-center">
-          <button
-            onClick={this.handleSearch}
-            className="btn btn-info btn-sm m-2"
-            type="submit"
-          >
-            Search
-          </button>
-        </Row>
-      </div>
+          </InputGroup>
+          <CardColumns>
+            {this.state.searchedHotels.map(hotelCard => (
+              <HotelCard key={hotelCard.id} hotelCard={hotelCard} />
+            ))}
+          </CardColumns>
+        </Jumbotron>
+      </>
     );
   }
 }

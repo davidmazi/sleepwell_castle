@@ -8,19 +8,16 @@ import Badge from "react-bootstrap/Badge";
 
 class Sumarry extends Component {
   state = {
-    hotelName: "Abbaye de la Bussière",
-    postalCode: "21360",
-    hotelUrl:
-      "https://www.relaischateaux.com/fr/france/bussiere-cote-d-or-la-bussiere-sur-ouche",
-    imageUrl:
-      "https://media.relaischateaux.com/public/hash/212bd2a66702672857b38bc0666b1d3d36ed339f",
-    priceRange: "225-450€",
-    description:
-      "Doté d’un lac et d’un jardin botanique, le parc de cette abbaye cistercienne du xiie siècle est empreint d'une longue tradition d’humilité, de paix et d’hospitalité et respire la tranquillité. Magnifiquement restaurée par la famille Cummings, l'Abbaye de la Bussière brille par son architecture discrète à l’extérieur, spectaculaire à l’intérieur, où la décoration a intégré d’anciennes fresques découvertes durant la rénovation du bâtiment. Meubles anciens et tissus soyeux déploient un raffinement sans ostentation, d’une pure élégance. Vous dînerez dans un décor de cathédrale et goûterez les délices d’une carte des vins qui offre le meilleur de la Bourgogne.",
+    hotelName: "",
+    postalCode: "",
+    hotelUrl: "",
+    imageUrl: "",
+    priceRange: "",
+    description: "",
     openDesc: false,
-    restaurantName: "1131",
-    chef: "Guillaume Royer",
-    restaurantUrl: "https://restaurant.michelin.fr//2852181/divellec-paris-07"
+    restaurantName: "",
+    chef: "",
+    restaurantUrl: ""
   };
   render() {
     const { openDesc } = this.state;
@@ -60,7 +57,7 @@ class Sumarry extends Component {
           </ListGroupItem>
           <ListGroupItem>Postal Code : {this.state.postalCode}</ListGroupItem>
         </ListGroup>
-        <Card.Body variant="info">
+        <Card.Footer variant="info">
           <Button
             className="m-1"
             variant="info"
@@ -77,7 +74,7 @@ class Sumarry extends Component {
           >
             Restaurant URL
           </Button>
-        </Card.Body>
+        </Card.Footer>
       </>
     );
   }

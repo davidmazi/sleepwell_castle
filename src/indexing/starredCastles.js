@@ -20,13 +20,15 @@ function findMutualChefsAndPCs(hotelsList, michelinsList) {
         hotelsList[i].postalCode === michelinsList[j].postalCode
       ) {
         starredHotels.push({
+          id: i,
           hotelName: hotelsList[i].name,
           restaurantName: michelinsList[j].name,
           postalCode: hotelsList[i].postalCode,
           chef: hotelsList[i].chef,
           url: hotelsList[i].url,
           priceRange: hotelsList[i].priceRange,
-          imageUrl: hotelsList[i].imageUrl
+          imageUrl: hotelsList[i].imageUrl,
+          description: hotelsList[i].description
         });
       }
     }

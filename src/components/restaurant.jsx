@@ -6,10 +6,10 @@ import Button from "react-bootstrap/Button";
 
 class Restaurant extends Component {
   state = {
-    restaurantName: "1131",
-    postalCode: "21360",
-    chef: "Guillaume Royer",
-    restaurantUrl: "https://restaurant.michelin.fr//2852181/divellec-paris-07"
+    restaurantName: this.props.restaurant.restaurantName,
+    postalCode: this.props.restaurant.postalCode,
+    chef: this.props.restaurant.chef,
+    restaurantUrl: this.props.restaurant.restaurantUrl
   };
   render() {
     return (
@@ -24,15 +24,15 @@ class Restaurant extends Component {
           </ListGroupItem>
           <ListGroupItem>Postal Code : {this.state.postalCode}</ListGroupItem>
         </ListGroup>
-        <Card.Body variant="info">
+        <Card.Footer variant="info">
           <Button
             variant="info"
             href="#"
             onClick={() => window.open(this.state.restaurantUrl, "_blank")}
           >
-            Restaurant URL
+            View
           </Button>
-        </Card.Body>
+        </Card.Footer>
       </>
     );
   }

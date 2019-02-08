@@ -8,15 +8,12 @@ import Badge from "react-bootstrap/Badge";
 
 class Hotel extends Component {
   state = {
-    hotelName: "Abbaye de la Bussière",
-    postalCode: "21360",
-    hotelUrl:
-      "https://www.relaischateaux.com/fr/france/bussiere-cote-d-or-la-bussiere-sur-ouche",
-    imageUrl:
-      "https://media.relaischateaux.com/public/hash/212bd2a66702672857b38bc0666b1d3d36ed339f",
-    priceRange: "225-450€",
-    description:
-      "Doté d’un lac et d’un jardin botanique, le parc de cette abbaye cistercienne du xiie siècle est empreint d'une longue tradition d’humilité, de paix et d’hospitalité et respire la tranquillité. Magnifiquement restaurée par la famille Cummings, l'Abbaye de la Bussière brille par son architecture discrète à l’extérieur, spectaculaire à l’intérieur, où la décoration a intégré d’anciennes fresques découvertes durant la rénovation du bâtiment. Meubles anciens et tissus soyeux déploient un raffinement sans ostentation, d’une pure élégance. Vous dînerez dans un décor de cathédrale et goûterez les délices d’une carte des vins qui offre le meilleur de la Bourgogne.",
+    hotelName: this.props.hotel.hotelName,
+    postalCode: this.props.hotel.postalCode,
+    hotelUrl: this.props.hotel.hotelUrl,
+    imageUrl: this.props.hotel.imageUrl,
+    description: this.props.hotel.description,
+    priceRange: this.props.hotel.priceRange,
     openDesc: false
   };
 
@@ -28,40 +25,52 @@ class Hotel extends Component {
           <Card.Img variant="top" src={this.state.imageUrl} />
           <Card.Title className="m-2">{this.state.hotelName}</Card.Title>
           <Card.Text>
-            {this.state.description.substring(0, 200).split(".")[0]}.
-            <Badge
-              pill
-              size="sm"
-              variant="secondary"
-              onClick={() => this.setState({ openDesc: !openDesc })}
-              aria-controls="restOfDesc"
-              aria-expanded={openDesc}
-            >
-              . . .
-            </Badge>
+            {this.state.description.substring(
+              0,
+              this.state.description.indexOf(".") + 1
+            )}
+            <Collapse in={!this.state.openDesc}>
+              <Badge
+                pill
+                className="m-2"
+                size="sm"
+                variant="secondary"
+                onClick={() => this.setState({ openDesc: !openDesc })}
+                aria-controls="restOfDesc"
+                aria-expanded={openDesc}
+              >
+                . . .
+              </Badge>
+            </Collapse>
             <Collapse in={this.state.openDesc}>
               <span id="restOfDesc">
-                {this.state.description.substring(0, 200).split(".")[1]}
-                {this.state.description.substring(200, 100000)}
+                {this.state.description.substring(
+                  this.state.description.indexOf(".") + 1,
+                  100000
+                )}
               </span>
             </Collapse>
           </Card.Text>
         </Card.Body>
         <ListGroup className="list-group-flush">
           <ListGroupItem variant="info">
-            Price Range per Night : {this.state.priceRange}
+            Price Range per Night :{" "}
+            {this.state.priceRange != "undefined" && this.state.priceRange}
+            {this.state.priceRange == "undefined" && (
+              <Badge className="warning">Contact the hotel for the price</Badge>
+            )}
           </ListGroupItem>
           <ListGroupItem>Postal Code : {this.state.postalCode}</ListGroupItem>
         </ListGroup>
-        <Card.Body variant="info">
+        <Card.Footer>
           <Button
             variant="info"
             href="#"
             onClick={() => window.open(this.state.hotelUrl, "_blank")}
           >
-            Hotel URL
+            View
           </Button>
-        </Card.Body>
+        </Card.Footer>
       </>
     );
   }
