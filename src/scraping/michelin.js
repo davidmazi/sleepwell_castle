@@ -26,25 +26,13 @@ function createPromises() {
 
 function createIndividualPromises() {
   return new Promise(function(resolve, reject) {
-    if (scrapingRound === 1) {
-      for (var i = 0; i < restaurantsList.length / 2; i++) {
-        let restaurantURL = restaurantsList[i].url;
-        indivPromisesList.push(
-          fillRestaurantInfo(/*proxyUrl + */ restaurantURL, i)
-        );
-        console.log("Added url of " + i + "th restaurant to the promises list");
-      }
-      resolve();
-      scrapingRound++;
-    }
-    if (scrapingRound === 2) {
-      for (i = restaurantsList.length / 2; i < restaurantsList.length; i++) {
-        let restaurantURL = restaurantsList[i].url;
-        indivPromisesList.push(
-          fillRestaurantInfo(/*proxyUrl + */ restaurantURL, i)
-        );
-        console.log("Added url of " + i + "th restaurant to the promises list");
-      }
+    for (var i = 0; i < restaurantsList.length; i++) {
+      let restaurantURL = restaurantsList[i].url;
+      indivPromisesList.push(
+        fillRestaurantInfo(/*proxyUrl + */ restaurantURL, i)
+      );
+      console.log("Added url of " + i + "th restaurant to the promises list");
+
       resolve();
     }
   });
@@ -65,30 +53,26 @@ function fillRestaurantsList(url) {
         return reject(err);
       }
       var $ = cheerio.load(html);
-      $(
-        "#panels-content-main-leftwrapper > div.panel-panel.panels-content-main-left > div > div > ul > li:nth-child(1) > div > a"
-      )
-        .first()
-        .each(function() {
-          let data = $(this);
-          let link = data.attr("href");
-          let url = "https://restaurant.michelin.fr/" + link;
-          restaurantsList.push({
-            name: "",
-            postalCode: "",
-            chef: "",
-            url: url,
-            nbStars: "",
-            priceRange: ""
-          });
+      $(".poi-card-link").each(function() {
+        let data = $(this);
+        let link = data.attr("href");
+        let url = "https://restaurant.michelin.fr/" + link;
+        restaurantsList.push({
+          name: "",
+          postalCode: "",
+          chef: "",
+          url: url,
+          nbStars: "",
+          priceRange: ""
         });
+      });
       resolve(restaurantsList);
     });
   });
 }
 
 function fillRestaurantInfo(url, index) {
-  //Going to the restaurant's adress to get the name, chef, and postal code
+  //Loading the restaurant's page to get the name, chef, and postal code
   return new Promise(function(resolve, reject) {
     request(url, function(err, res, html) {
       if (err) {
@@ -127,7 +111,6 @@ function fillRestaurantInfo(url, index) {
         .each(function() {
           let data = $(this);
           let nbStars = data.text().split(" ")[0];
-          console.log(nbStars);
           restaurantsList[index].nbStars = nbStars;
         });
 
@@ -183,10 +166,6 @@ Promise.all(promisesList)
   .then(() => {
     return Promise.all(indivPromisesList);
   })
-  // .then(createIndividualPromises)
-  // .then(() => {
-  //   return Promise.all(indivPromisesList);
-  // })
   .then(saveRestaurantsInJson)
   .then(() => {
     console.log("Successfuly saved restaurants JSON file");
