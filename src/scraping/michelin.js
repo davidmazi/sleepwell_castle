@@ -55,22 +55,33 @@ function fillRestaurantsList(url) {
   return new Promise(function(resolve, reject) {
     request(url, function(err, res, html) {
       if (err) {
-        console.error(err);
+        console.error(err.message);
         return reject(err);
       } else if (res.statusCode !== 200) {
         //200 means request succesfull
         err = new Error("Unexpected status code : " + res.statusCode);
         err.res = res;
-        console.error(err);
+        console.error(err.message);
         return reject(err);
       }
       var $ = cheerio.load(html);
-      $(".poi-card-link").each(() => {
-        let data = $(this);
-        let link = data.attr("href");
-        let url = "https://restaurant.michelin.fr/" + link;
-        restaurantsList.push({ name: "", postalCode: "", chef: "", url: url });
-      });
+      $(
+        "#panels-content-main-leftwrapper > div.panel-panel.panels-content-main-left > div > div > ul > li:nth-child(1) > div > a"
+      )
+        .first()
+        .each(function() {
+          let data = $(this);
+          let link = data.attr("href");
+          let url = "https://restaurant.michelin.fr/" + link;
+          restaurantsList.push({
+            name: "",
+            postalCode: "",
+            chef: "",
+            url: url,
+            nbStars: "",
+            priceRange: ""
+          });
+        });
       resolve(restaurantsList);
     });
   });
@@ -81,12 +92,12 @@ function fillRestaurantInfo(url, index) {
   return new Promise(function(resolve, reject) {
     request(url, function(err, res, html) {
       if (err) {
-        console.error(err);
+        console.error(err.message);
         return reject(err);
       } else if (res.statusCode !== 200) {
         err = new Error("Unexpected status code : " + res.statusCode);
         err.res = res;
-        console.error(err);
+        console.error(err.message);
         return reject(err);
       }
 
@@ -107,6 +118,27 @@ function fillRestaurantInfo(url, index) {
           let data = $(this);
           let pc = data.text();
           restaurantsList[index].postalCode = pc;
+        });
+
+      $(
+        "#node_poi-guide-wrapper > div.node_poi-distinction-section > ul > li:nth-child(1) > div.content-wrapper"
+      )
+        .first()
+        .each(function() {
+          let data = $(this);
+          let nbStars = data.text().split(" ")[0];
+          console.log(nbStars);
+          restaurantsList[index].nbStars = nbStars;
+        });
+
+      $('span[itemprop="priceRange"]')
+        .first()
+        .each(function() {
+          let data = $(this);
+          let price = data.text();
+          restaurantsList[index].priceRange = String(
+            price.split("-")[1]
+          ).trim();
         });
 
       $(
@@ -151,10 +183,10 @@ Promise.all(promisesList)
   .then(() => {
     return Promise.all(indivPromisesList);
   })
-  .then(createIndividualPromises)
-  .then(() => {
-    return Promise.all(indivPromisesList);
-  })
+  // .then(createIndividualPromises)
+  // .then(() => {
+  //   return Promise.all(indivPromisesList);
+  // })
   .then(saveRestaurantsInJson)
   .then(() => {
     console.log("Successfuly saved restaurants JSON file");
