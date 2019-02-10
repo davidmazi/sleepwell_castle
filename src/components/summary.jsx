@@ -5,6 +5,8 @@ import ListGroupItem from "react-bootstrap/ListGroupItem";
 import Collapse from "react-bootstrap/Collapse";
 import Button from "react-bootstrap/Button";
 import Badge from "react-bootstrap/Badge";
+import Image from "react-bootstrap/Image";
+import michelinLogo from "../logos/michelin.png";
 
 class Summary extends Component {
   state = {
@@ -17,10 +19,45 @@ class Summary extends Component {
     openDesc: false,
     restaurantName: this.props.summary.restaurantName,
     chef: this.props.summary.chef,
-    restaurantUrl: this.props.summary.restaurantUrl
+    restaurantUrl: this.props.summary.restaurantUrl,
+    restaurantPriceRange: this.props.summary.restaurantPrices,
+    nbStars: this.props.summary.nbStars,
+    totalPrice: ""
   };
   render() {
-    const { openDesc } = this.state;
+    var { openDesc } = this.state;
+    var { totalPrice } = this.state;
+
+    if (this.state.priceRange === "" || this.state.priceRange === "undefined") {
+      totalPrice = this.state.restaurantPriceRange;
+    } else {
+      totalPrice =
+        this.state.restaurantPriceRange.match(/\d+/g).map(Number)[0] +
+        this.state.priceRange.match(/\d+/g).map(Number)[0] +
+        "€ - " +
+        Number(
+          this.state.restaurantPriceRange.match(/\d+/g).map(Number)[1] +
+            this.state.priceRange.match(/\d+/g).map(Number)[1]
+        ) +
+        "€";
+    }
+    if (
+      this.state.restaurantPriceRange.match(/\d+/g).map(Number)[1] === undefined
+    ) {
+      totalPrice =
+        this.state.restaurantPriceRange.match(/\d+/g).map(Number)[0] +
+        this.state.priceRange.match(/\d+/g).map(Number)[0] +
+        "€ - " +
+        this.state.priceRange.match(/\d+/g).map(Number)[1] +
+        "€";
+    }
+
+    // min =
+    //     this.state.restaurantPriceRange.match(/\d+/g).map(Number)[0] +
+    //     this.state.priceRange.match(/\d+/g).map(Number)[0];
+    //   max =
+    //     this.state.restaurantPriceRange.match(/\d+/g).map(Number)[1] +
+    //     this.state.priceRange.match(/\d+/g).map(Number)[1];
     return (
       <>
         <Card.Body>
@@ -59,12 +96,38 @@ class Summary extends Component {
             Price Range per Night :{" "}
             {this.state.priceRange !== "undefined" && this.state.priceRange}
             {this.state.priceRange === "undefined" && (
-              <Badge variant="warning">Contact hotel</Badge>
+              <Badge variant="warning">Contact hotel or restaurant</Badge>
             )}
           </ListGroupItem>
           <ListGroupItem>Chef Name : {this.state.chef}</ListGroupItem>
           <ListGroupItem variant="info">
             Restaurant Name : {this.state.restaurantName}
+          </ListGroupItem>
+          <ListGroupItem>
+            Michelin Stars :{" "}
+            {this.state.nbStars === "1" && (
+              <Image src={michelinLogo} height="20px" />
+            )}
+            {this.state.nbStars === "2" && (
+              <>
+                <Image src={michelinLogo} height="20px" />{" "}
+                <Image src={michelinLogo} height="20px" />
+              </>
+            )}
+            {this.state.nbStars === "3" && (
+              <>
+                <Image src={michelinLogo} height="20px" />{" "}
+                <Image src={michelinLogo} height="20px" />{" "}
+                <Image src={michelinLogo} height="20px" />
+              </>
+            )}
+          </ListGroupItem>
+          <ListGroupItem variant="info">
+            Total Prices :{" "}
+            {this.state.restaurantPriceRange !== "undefined" && totalPrice}
+            {this.state.restaurantPriceRange === "undefined" && (
+              <Badge variant="warning">Contact Hotel</Badge>
+            )}
           </ListGroupItem>
           <ListGroupItem>Postal Code : {this.state.postalCode}</ListGroupItem>
         </ListGroup>

@@ -57,7 +57,7 @@ class Hotel extends Component {
             Price Range per Night :{" "}
             {this.state.priceRange !== "undefined" && this.state.priceRange}
             {this.state.priceRange === "undefined" && (
-              <Badge variant="warning">Contact hotel</Badge>
+              <Badge variant="warning">Not a hotel, restaurant only</Badge>
             )}
           </ListGroupItem>
           <ListGroupItem>Postal Code : {this.state.postalCode}</ListGroupItem>

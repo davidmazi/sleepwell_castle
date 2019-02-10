@@ -63,7 +63,9 @@ function fillRestaurantsList(url) {
           chef: "",
           url: url,
           nbStars: "",
-          priceRange: ""
+          priceRange: "",
+          lat: "",
+          lng: ""
         });
       });
       resolve(restaurantsList);
@@ -122,6 +124,24 @@ function fillRestaurantInfo(url, index) {
           restaurantsList[index].priceRange = String(
             price.split("-")[1]
           ).trim();
+        });
+
+      $('meta[itemprop="latitude"]')
+        .first()
+        .each(function() {
+          let data = $(this);
+          let lat = data.attr("content");
+          restaurantsList[index].lat = String(lat);
+          console.log(lat);
+        });
+
+      $('meta[itemprop="longitude"]')
+        .first()
+        .each(function() {
+          let data = $(this);
+          let lng = data.attr("content");
+          restaurantsList[index].lng = String(lng);
+          console.log(lng);
         });
 
       $(

@@ -20,7 +20,11 @@ class HotelCard extends Component {
     openDesc: false,
     hotelVisible: true,
     restaurantVisible: false,
-    summaryVisible: false
+    summaryVisible: false,
+    restaurantPrices: this.props.hotelCard.restaurantPrices,
+    nbStars: this.props.hotelCard.nbStars,
+    lat: this.props.hotelCard.lat,
+    lng: this.props.hotelCard.lng
   };
 
   handleSelect(tab) {
@@ -64,7 +68,9 @@ class HotelCard extends Component {
       postalCode: this.state.postalCode,
       chef: this.state.chef,
       imageUrl: this.state.imageUrl,
-      restaurantUrl: this.state.restaurantUrl
+      restaurantUrl: this.state.restaurantUrl,
+      restaurantPrices: this.state.restaurantPrices,
+      nbStars: this.state.nbStars
     };
     const summary = {
       id: this.state.id,
@@ -77,7 +83,9 @@ class HotelCard extends Component {
       openDesc: false,
       restaurantName: this.state.restaurantName,
       chef: this.state.chef,
-      restaurantUrl: this.state.restaurantUrl
+      restaurantUrl: this.state.restaurantUrl,
+      restaurantPrices: this.state.restaurantPrices,
+      nbStars: this.state.nbStars
     };
     return (
       <>
