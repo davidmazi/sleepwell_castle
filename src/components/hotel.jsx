@@ -14,6 +14,7 @@ class Hotel extends Component {
     imageUrl: this.props.hotel.imageUrl,
     description: this.props.hotel.description,
     priceRange: this.props.hotel.priceRange,
+    address: this.props.hotel.address,
     openDesc: false
   };
 
@@ -60,7 +61,7 @@ class Hotel extends Component {
               <Badge variant="warning">Not a hotel, restaurant only</Badge>
             )}
           </ListGroupItem>
-          <ListGroupItem>Postal Code : {this.state.postalCode}</ListGroupItem>
+          <ListGroupItem>Address : {this.state.address}</ListGroupItem>
         </ListGroup>
         <Card.Footer>
           <Button

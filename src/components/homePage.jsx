@@ -9,7 +9,7 @@ import HotelCard from "./hotelCard.jsx";
 import Dropdown from "react-bootstrap/Dropdown";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import GoogleMapReact from "google-map-react";
-import Badge from "react-bootstrap/Badge";
+import HotelMapItem from "./hotelMapItem.jsx";
 
 export class HomePage extends Component {
   state = {
@@ -18,7 +18,9 @@ export class HomePage extends Component {
     searchValue: "",
     sortValue: "",
     mapOn: false,
-    sortingDesc: false
+    sortingDesc: false,
+    userLat: 0,
+    userLng: 1
   };
 
   handleChange = event => {
@@ -27,7 +29,7 @@ export class HomePage extends Component {
     this.setState({ searchValue });
     this.state.starredHotels.forEach(hotel => {
       if (
-        String(hotel.postalCode)
+        String(hotel.address)
           .toLowerCase()
           .includes(searchValue.toLowerCase())
       ) {
@@ -81,21 +83,15 @@ export class HomePage extends Component {
   handleSelect = event => {
     var sortedHotels = [];
     var sortValue = event;
+    var userLat = 0;
+    var userLng = 1;
     this.setState({ sortValue });
     if (sortValue === "#stars") {
       sortedHotels = this.state.searchedHotels.sort((a, b) =>
         a.nbStars > b.nbStars ? 1 : b.nbStars > a.nbStars ? -1 : 0
       );
-      // var sortedHotels1 = [];
-      // var sortedHotels2 = [];
-      // var sortedHotels3 = [];
-      // this.state.searchedHotels.forEach(hotel => {
-      //   if (hotel.nbStars === "1") sortedHotels1.push(hotel);
-      //   else if (hotel.nbStars === "2") sortedHotels2.push(hotel);
-      //   else if (hotel.nbStars === "3") sortedHotels3.push(hotel);
-      // });
-      // sortedHotels = sortedHotels1.concat(sortedHotels2, sortedHotels3);
     }
+
     if (sortValue === "#prices") {
       function compareByPrice(a, b) {
         if (a.priceRange === "undefined" || a.priceRange === "") return 1;
@@ -120,14 +116,68 @@ export class HomePage extends Component {
         return 0;
       }
       sortedHotels = this.state.searchedHotels.sort(compareByPrice);
-      // var tempHotels = [];
-      // this.state.searchedHotels.forEach(hotel => {
-      //   if (tempHotels.length === 0) tempHotels.push(hotel);
-      //   for (var i = 0; i < tempHotels.length; i++) {
-      //     if (hotel.PRICE > tempHotels[i].PRICE);
-      //   }
-      // });
     }
+
+    if (sortValue === "#distance") {
+      function compareByDistance(a, b) {
+        var distanceA = distanceInKmBetweenEarthCoordinates(
+          userLat,
+          userLng,
+          a.lat,
+          a.lng
+        );
+        var distanceB = distanceInKmBetweenEarthCoordinates(
+          userLat,
+          userLng,
+          b.lat,
+          b.lng
+        );
+        if (distanceA < distanceB) {
+          console.log("smal");
+          return -1;
+        }
+        if (distanceA > distanceB) {
+          console.log("big");
+          return 1;
+        }
+        return 0;
+      }
+
+      function degreesToRadians(degrees) {
+        return (degrees * Math.PI) / 180;
+      }
+      // taken from : https://stackoverflow.com/questions/365826/calculate-distance-between-2-gps-coordinates
+      function distanceInKmBetweenEarthCoordinates(lat1, lon1, lat2, lon2) {
+        var earthRadiusKm = 6371;
+
+        var dLat = degreesToRadians(lat2 - lat1);
+        var dLon = degreesToRadians(lon2 - lon1);
+
+        lat1 = degreesToRadians(lat1);
+        lat2 = degreesToRadians(lat2);
+
+        var a =
+          Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+          Math.sin(dLon / 2) *
+            Math.sin(dLon / 2) *
+            Math.cos(lat1) *
+            Math.cos(lat2);
+        var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+        return earthRadiusKm * c;
+      }
+
+      sortedHotels = this.state.searchedHotels;
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(position => {
+          // var userPos = JSON.parse(this.state.userPos);
+          userLat = position.coords.latitude;
+          userLng = position.coords.longitude;
+          sortedHotels.sort(compareByDistance);
+          this.setState({ searchedHotels: sortedHotels });
+        });
+      }
+    }
+
     if (sortValue === "#clearSort") {
       this.setState({ sortingDesc: false });
     } else this.setState({ sortingDesc: true });
@@ -150,7 +200,7 @@ export class HomePage extends Component {
               <InputGroup.Text id="addon">Magic Search Bar</InputGroup.Text>
             </InputGroup.Prepend>
             <FormControl
-              placeholder="Name, Location, Chef, Restaurant, Price, Description... "
+              placeholder="Name, Location, Chef, Restaurant, Price, Description... (Map to show the map)"
               aria-label="Username"
               aria-describedby="addon"
               value={this.state.searchValue}
@@ -191,7 +241,7 @@ export class HomePage extends Component {
               </li>
             </ul>
           )}
-          {this.state.searchedHotels.length === 0 && (
+          {this.state.searchValue.length === 0 && (
             <ul
               className="text-center"
               style={{
@@ -240,19 +290,12 @@ export class HomePage extends Component {
                 defaultZoom={6}
               >
                 {this.state.starredHotels.map(hotel => (
-                  <Badge
-                    pill
-                    variant="success"
+                  <HotelMapItem
                     key={hotel.id}
                     lat={Number(hotel.lat)}
                     lng={Number(hotel.lng)}
-                  >
-                    <div>
-                      {hotel.hotelName}
-                      <br />
-                      {hotel.chef}
-                    </div>
-                  </Badge>
+                    hotel={hotel}
+                  />
                 ))}
               </GoogleMapReact>
             </div>

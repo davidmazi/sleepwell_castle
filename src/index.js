@@ -1,12 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-// import App from "./App";
 import "bootstrap/js/src/tooltip.js";
 import "bootstrap/dist/css/bootstrap.css";
 import * as serviceWorker from "./serviceWorker";
 import HomePage from "./components/homePage.jsx";
-//import HotelCard from "./components/hotelCard.jsx";
 
 ReactDOM.render(<HomePage />, document.getElementById("root"));
 

@@ -13,7 +13,8 @@
     "restaurantPrices": "98 €",
     "nbStars": "1",
     "lat": "47.215813020000",
-    "lng": "4.724140470000"
+    "lng": "4.724140470000",
+    "address": "La Bussière-sur-Ouche"
   },
   {
     "id": 1,
@@ -29,7 +30,8 @@
     "restaurantPrices": "De 39 € à 77 €",
     "nbStars": "2",
     "lat": "47.155020000000",
-    "lng": "-2.212800000000"
+    "lng": "-2.212800000000",
+    "address": "La Plaine sur Mer"
   },
   {
     "id": 2,
@@ -45,7 +47,8 @@
     "restaurantPrices": "De 95 € à 185 €",
     "nbStars": "3",
     "lat": "49.247360000000",
-    "lng": "4.001700000000"
+    "lng": "4.001700000000",
+    "address": "Tinqueux"
   },
   {
     "id": 3,
@@ -54,14 +57,15 @@
     "postalCode": "67000",
     "chef": "Franck Pelux",
     "url": "https://www.relaischateaux.com/fr/france/crocodile-bas-rhin",
-    "priceRange": "undefined",
+    "priceRange": "",
     "imageUrl": "https://media.relaischateaux.com/public/hash/041067c3d196a9b5499676f4748f8b9fcc7928b4",
     "description": "",
     "restaurantUrl": "https://restaurant.michelin.fr//kl196wcf/au-crocodile-strasbourg",
     "restaurantPrices": "De 48 € à 148 €",
     "nbStars": "1",
     "lat": "48.583722000000",
-    "lng": "7.747566000000"
+    "lng": "7.747566000000",
+    "address": "Strasbourg"
   },
   {
     "id": 5,
@@ -70,14 +74,15 @@
     "postalCode": "69009",
     "chef": "Jean-Christophe Ansanay-Alex",
     "url": "https://www.relaischateaux.com/fr/france/aubergedelile-rhone-lyon",
-    "priceRange": "undefined",
+    "priceRange": "",
     "imageUrl": "https://media.relaischateaux.com/public/hash/f48dcc07c91e1a8418470aa93a30bf5f05d6e964",
     "description": "",
     "restaurantUrl": "https://restaurant.michelin.fr//29tj1pj/auberge-de-lile-barbe-lyon-09",
     "restaurantPrices": "De 50 € à 158 €",
     "nbStars": "1",
     "lat": "45.797620000000",
-    "lng": "4.832770000000"
+    "lng": "4.832770000000",
+    "address": "Lyon"
   },
   {
     "id": 6,
@@ -93,7 +98,8 @@
     "restaurantPrices": "De 60 € à 225 €",
     "nbStars": "2",
     "lat": "48.180390000000",
-    "lng": "-4.235130000000"
+    "lng": "-4.235130000000",
+    "address": "Plomodiern"
   },
   {
     "id": 7,
@@ -109,7 +115,8 @@
     "restaurantPrices": "De 70 € à 160 €",
     "nbStars": "1",
     "lat": "47.801009920000",
-    "lng": "2.739924830000"
+    "lng": "2.739924830000",
+    "address": "Boismorand"
   },
   {
     "id": 8,
@@ -125,7 +132,8 @@
     "restaurantPrices": "De 67 € à 161 €",
     "nbStars": "1",
     "lat": "49.194040000000",
-    "lng": "2.480580000000"
+    "lng": "2.480580000000",
+    "address": "Chantilly"
   },
   {
     "id": 9,
@@ -141,7 +149,8 @@
     "restaurantPrices": "De 100 € à 220 €",
     "nbStars": "2",
     "lat": "43.739681590000",
-    "lng": "4.787717140000"
+    "lng": "4.787717140000",
+    "address": "Les Baux-de-Provence"
   },
   {
     "id": 10,
@@ -157,7 +166,8 @@
     "restaurantPrices": "De 58 € à 68 €",
     "nbStars": "1",
     "lat": "48.724648570000",
-    "lng": "-3.971977860000"
+    "lng": "-3.971977860000",
+    "address": "Roscoff"
   },
   {
     "id": 14,
@@ -173,7 +183,8 @@
     "restaurantPrices": "De 75 € à 155 €",
     "nbStars": "1",
     "lat": "45.180590000000",
-    "lng": "-0.752010000000"
+    "lng": "-0.752010000000",
+    "address": "Pauillac"
   },
   {
     "id": 15,
@@ -189,7 +200,8 @@
     "restaurantPrices": "De 65 € à 245 €",
     "nbStars": "1",
     "lat": "44.553820000000",
-    "lng": "-0.341320000000"
+    "lng": "-0.341320000000",
+    "address": "Bommes"
   },
   {
     "id": 16,
@@ -205,7 +217,8 @@
     "restaurantPrices": "De 65 € à 140 €",
     "nbStars": "1",
     "lat": "45.917550000000",
-    "lng": "4.608050000000"
+    "lng": "4.608050000000",
+    "address": "Bagnols"
   },
   {
     "id": 26,
@@ -221,7 +234,8 @@
     "restaurantPrices": "De 39 € à 155 €",
     "nbStars": "1",
     "lat": "44.496602160000",
-    "lng": "1.394745490000"
+    "lng": "1.394745490000",
+    "address": "Mercuès"
   },
   {
     "id": 33,
@@ -237,7 +251,8 @@
     "restaurantPrices": "De 28 € à 65 €",
     "nbStars": "1",
     "lat": "43.187737092541",
-    "lng": "6.590642265193"
+    "lng": "6.590642265193",
+    "address": "La Croix-Valmer"
   },
   {
     "id": 34,
@@ -253,7 +268,8 @@
     "restaurantPrices": "De 50 € à 146 €",
     "nbStars": "1",
     "lat": "44.849534300000",
-    "lng": "1.525504900000"
+    "lng": "1.525504900000",
+    "address": "Lacave"
   },
   {
     "id": 36,
@@ -269,7 +285,8 @@
     "restaurantPrices": "De 69 € à 150 €",
     "nbStars": "1",
     "lat": "48.591310000000",
-    "lng": "6.490890000000"
+    "lng": "6.490890000000",
+    "address": "Lunéville"
   },
   {
     "id": 38,
@@ -285,7 +302,8 @@
     "restaurantPrices": "De 49 € à 95 €",
     "nbStars": "1",
     "lat": "50.638690000000",
-    "lng": "3.057201400000"
+    "lng": "3.057201400000",
+    "address": "Lille"
   },
   {
     "id": 40,
@@ -301,7 +319,8 @@
     "restaurantPrices": "De 70 € à 190 €",
     "nbStars": "2",
     "lat": "49.241080000000",
-    "lng": "4.052630000000"
+    "lng": "4.052630000000",
+    "address": "Reims"
   },
   {
     "id": 41,
@@ -317,7 +336,8 @@
     "restaurantPrices": "De 44 € à 110 €",
     "nbStars": "1",
     "lat": "47.515330000000",
-    "lng": "-2.501970000000"
+    "lng": "-2.501970000000",
+    "address": "Billiers"
   },
   {
     "id": 44,
@@ -333,7 +353,8 @@
     "restaurantPrices": "De 90 € à 168 €",
     "nbStars": "3",
     "lat": "45.823565320000",
-    "lng": "6.599851810000"
+    "lng": "6.599851810000",
+    "address": "Megève"
   },
   {
     "id": 52,
@@ -349,7 +370,8 @@
     "restaurantPrices": "De 68 € à 156 €",
     "nbStars": "2",
     "lat": "44.893579028626",
-    "lng": "-0.156536019084"
+    "lng": "-0.156536019084",
+    "address": "Saint-Emilion"
   },
   {
     "id": 53,
@@ -365,7 +387,8 @@
     "restaurantPrices": "De 58 € à 148 €",
     "nbStars": "1",
     "lat": "46.879411540000",
-    "lng": "-1.406631210000"
+    "lng": "-1.406631210000",
+    "address": "Saint-Sulpice-le-Verdon"
   },
   {
     "id": 54,
@@ -381,7 +404,8 @@
     "restaurantPrices": "De 30 € à 108 €",
     "nbStars": "1",
     "lat": "42.609330000000",
-    "lng": "3.035930000000"
+    "lng": "3.035930000000",
+    "address": "Saint-Cyprien"
   },
   {
     "id": 55,
@@ -397,7 +421,8 @@
     "restaurantPrices": "De 135 € à 240 €",
     "nbStars": "3",
     "lat": "43.250874870000",
-    "lng": "5.783515570000"
+    "lng": "5.783515570000",
+    "address": "Le Castellet"
   },
   {
     "id": 60,
@@ -413,7 +438,8 @@
     "restaurantPrices": "De 95 € à 160 €",
     "nbStars": "1",
     "lat": "45.447940200000",
-    "lng": "6.975334640000"
+    "lng": "6.975334640000",
+    "address": "Val d'Isère"
   },
   {
     "id": 62,
@@ -429,7 +455,8 @@
     "restaurantPrices": "De 105 € à 225 €",
     "nbStars": "2",
     "lat": "45.839825000000",
-    "lng": "6.210745000000"
+    "lng": "6.210745000000",
+    "address": "Talloires - Montmin"
   },
   {
     "id": 63,
@@ -445,7 +472,8 @@
     "restaurantPrices": "De 78 € à 198 €",
     "nbStars": "3",
     "lat": "45.918085220000",
-    "lng": "6.144360580000"
+    "lng": "6.144360580000",
+    "address": "Annecy"
   },
   {
     "id": 64,
@@ -460,8 +488,9 @@
     "restaurantUrl": "https://restaurant.michelin.fr//q8lel2a/en-marge-aureville",
     "restaurantPrices": "De 34 € à 145 €",
     "nbStars": "1",
-    "lat": "43.531390000000",
-    "lng": "1.481930000000"
+    "lat": "43.490790000000",
+    "lng": "1.440880000000",
+    "address": "Aureville"
   },
   {
     "id": 69,
@@ -477,7 +506,8 @@
     "restaurantPrices": "De 149 € à 315 €",
     "nbStars": "3",
     "lat": "45.370440000000",
-    "lng": "6.511300000000"
+    "lng": "6.511300000000",
+    "address": "Saint Martin de Belleville"
   },
   {
     "id": 71,
@@ -493,7 +523,8 @@
     "restaurantPrices": "De 29 € à 71 €",
     "nbStars": "1",
     "lat": "43.367830000000",
-    "lng": "-1.584360000000"
+    "lng": "-1.584360000000",
+    "address": "Saint-Pée sur Nivelle"
   },
   {
     "id": 74,
@@ -509,7 +540,8 @@
     "restaurantPrices": "De 100 € à 210 €",
     "nbStars": "2",
     "lat": "43.821450000000",
-    "lng": "5.317710000000"
+    "lng": "5.317710000000",
+    "address": "Bonnieux en Provence"
   },
   {
     "id": 76,
@@ -525,7 +557,8 @@
     "restaurantPrices": "De 35 € à 75 €",
     "nbStars": "1",
     "lat": "44.093450000000",
-    "lng": "6.013570000000"
+    "lng": "6.013570000000",
+    "address": "Château-Arnoux"
   },
   {
     "id": 77,
@@ -541,7 +574,8 @@
     "restaurantPrices": "De 55 € à 89 €",
     "nbStars": "1",
     "lat": "45.892850000000",
-    "lng": "1.177550000000"
+    "lng": "1.177550000000",
+    "address": "Nieul"
   },
   {
     "id": 78,
@@ -557,7 +591,8 @@
     "restaurantPrices": "De 79 € à 238 €",
     "nbStars": "2",
     "lat": "47.983530000000",
-    "lng": "3.384980000000"
+    "lng": "3.384980000000",
+    "address": "Joigny"
   },
   {
     "id": 81,
@@ -573,7 +608,8 @@
     "restaurantPrices": "De 80 € à 160 €",
     "nbStars": "2",
     "lat": "50.470920000000",
-    "lng": "1.754720000000"
+    "lng": "1.754720000000",
+    "address": "La Madelaine-sous-Montreuil"
   },
   {
     "id": 83,
@@ -589,7 +625,8 @@
     "restaurantPrices": "De 295 € à 395 €",
     "nbStars": "2",
     "lat": "45.875640000000",
-    "lng": "6.401940000000"
+    "lng": "6.401940000000",
+    "address": "Manigod"
   },
   {
     "id": 84,
@@ -605,7 +642,8 @@
     "restaurantPrices": "De 66 € à 198 €",
     "nbStars": "2",
     "lat": "45.516455450000",
-    "lng": "4.867678890000"
+    "lng": "4.867678890000",
+    "address": "Vienne"
   },
   {
     "id": 86,
@@ -621,7 +659,8 @@
     "restaurantPrices": "De 50 € à 95 €",
     "nbStars": "1",
     "lat": "42.534560000000",
-    "lng": "8.790910000000"
+    "lng": "8.790910000000",
+    "address": "Calvi"
   },
   {
     "id": 87,
@@ -630,14 +669,15 @@
     "postalCode": "06110",
     "chef": "Bruno Oger",
     "url": "https://www.relaischateaux.com/fr/france/archange-alpes-maritimes",
-    "priceRange": "undefined",
+    "priceRange": "",
     "imageUrl": "https://media.relaischateaux.com/public/hash/b0ae61d96cda80163aed906cef6d8387ca2a8189",
     "description": "",
     "restaurantUrl": "https://restaurant.michelin.fr//2f4ok2n/villa-archange-le-cannet",
     "restaurantPrices": "De 72 € à 350 €",
     "nbStars": "2",
     "lat": "43.573035300000",
-    "lng": "7.014136040000"
+    "lng": "7.014136040000",
+    "address": "Le Cannet"
   },
   {
     "id": 90,
@@ -653,7 +693,8 @@
     "restaurantPrices": "De 85 € à 205 €",
     "nbStars": "2",
     "lat": "48.138550000000",
-    "lng": "7.265520000000"
+    "lng": "7.265520000000",
+    "address": "Kaysersberg"
   },
   {
     "id": 91,
@@ -669,7 +710,8 @@
     "restaurantPrices": "De 80 € à 135 €",
     "nbStars": "2",
     "lat": "50.582420000000",
-    "lng": "2.511870000000"
+    "lng": "2.511870000000",
+    "address": "Busnes"
   },
   {
     "id": 97,
@@ -678,14 +720,15 @@
     "postalCode": "75001",
     "chef": "Guy Martin",
     "url": "https://www.relaischateaux.com/fr/france/vefour-paris",
-    "priceRange": "undefined",
+    "priceRange": "",
     "imageUrl": "https://media.relaischateaux.com/public/hash/b6ca61ecee9c1fca9420fce2b6f6cfd24841dbac",
     "description": "",
     "restaurantUrl": "https://restaurant.michelin.fr//2a7edmf/le-grand-vefour-paris-01",
     "restaurantPrices": "De 115 € à 315 €",
     "nbStars": "2",
     "lat": "48.866274000000",
-    "lng": "2.337932000000"
+    "lng": "2.337932000000",
+    "address": "Paris"
   },
   {
     "id": 101,
@@ -701,7 +744,8 @@
     "restaurantPrices": "De 80 € à 170 €",
     "nbStars": "1",
     "lat": "43.937080000000",
-    "lng": "5.238440000000"
+    "lng": "5.238440000000",
+    "address": "Joucas"
   },
   {
     "id": 102,
@@ -717,7 +761,8 @@
     "restaurantPrices": "De 36 € à 120 €",
     "nbStars": "1",
     "lat": "43.963400000000",
-    "lng": "4.796310000000"
+    "lng": "4.796310000000",
+    "address": "Villeneuve lez Avignon"
   },
   {
     "id": 104,
@@ -733,7 +778,8 @@
     "restaurantPrices": "De 75 € à 250 €",
     "nbStars": "2",
     "lat": "47.279620000000",
-    "lng": "4.232020000000"
+    "lng": "4.232020000000",
+    "address": "Saulieu"
   },
   {
     "id": 105,
@@ -749,7 +795,8 @@
     "restaurantPrices": "De 49 € à 160 €",
     "nbStars": "1",
     "lat": "44.814310000000",
-    "lng": "-0.503690000000"
+    "lng": "-0.503690000000",
+    "address": "Bouliac"
   },
   {
     "id": 107,
@@ -765,7 +812,8 @@
     "restaurantPrices": "De 145 € à 230 €",
     "nbStars": "2",
     "lat": "44.676500000000",
-    "lng": "2.915440000000"
+    "lng": "2.915440000000",
+    "address": "Laguiole"
   },
   {
     "id": 109,
@@ -781,7 +829,8 @@
     "restaurantPrices": "De 50 € à 120 €",
     "nbStars": "1",
     "lat": "44.874470000000",
-    "lng": "0.830340000000"
+    "lng": "0.830340000000",
+    "address": "Trémolat"
   },
   {
     "id": 112,
@@ -797,7 +846,8 @@
     "restaurantPrices": "De 60 € à 80 €",
     "nbStars": "1",
     "lat": "47.410170000000",
-    "lng": "0.771470000000"
+    "lng": "0.771470000000",
+    "address": "Rochecorbon"
   },
   {
     "id": 113,
@@ -813,7 +863,8 @@
     "restaurantPrices": "De 49 € à 165 €",
     "nbStars": "2",
     "lat": "47.508880000000",
-    "lng": "1.143340000000"
+    "lng": "1.143340000000",
+    "address": "Onzain"
   },
   {
     "id": 115,
@@ -829,7 +880,8 @@
     "restaurantPrices": "De 133 € à 255 €",
     "nbStars": "3",
     "lat": "43.697511370000",
-    "lng": "-0.376790960000"
+    "lng": "-0.376790960000",
+    "address": "Eugénie-les-Bains"
   },
   {
     "id": 116,
@@ -838,14 +890,15 @@
     "postalCode": "75008",
     "chef": "Julien Dumas",
     "url": "https://www.relaischateaux.com/fr/france/lucascarton-ile-de-france-paris",
-    "priceRange": "undefined",
+    "priceRange": "",
     "imageUrl": "https://media.relaischateaux.com/public/hash/19162d1e4030235b9551e2da064e6fa1c50b6fc3",
     "description": "",
     "restaurantUrl": "https://restaurant.michelin.fr//2abav0l/lucas-carton-paris-08",
     "restaurantPrices": "De 89 € à 151 €",
     "nbStars": "1",
     "lat": "48.869770000000",
-    "lng": "2.323460000000"
+    "lng": "2.323460000000",
+    "address": "Paris"
   },
   {
     "id": 117,
@@ -861,7 +914,8 @@
     "restaurantPrices": "De 55 € à 133 €",
     "nbStars": "1",
     "lat": "49.034430000000",
-    "lng": "7.506700000000"
+    "lng": "7.506700000000",
+    "address": "Baerenthal"
   },
   {
     "id": 119,
@@ -870,14 +924,15 @@
     "postalCode": "06210",
     "chef": "Alain Montigny",
     "url": "https://www.relaischateaux.com/fr/france/oasis-alpes-maritimes-la-napoule",
-    "priceRange": "undefined",
+    "priceRange": "",
     "imageUrl": "https://media.relaischateaux.com/public/hash/33761bd623ae91c7c4028b0148ac09ffd9bfd9e6",
     "description": "",
     "restaurantUrl": "https://restaurant.michelin.fr//29v9df2/loasis-mandelieu-la-napoule",
     "restaurantPrices": "De 69 € à 282 €",
     "nbStars": "1",
     "lat": "43.525490000000",
-    "lng": "6.943200000000"
+    "lng": "6.943200000000",
+    "address": "La Napoule"
   },
   {
     "id": 120,
@@ -893,7 +948,8 @@
     "restaurantPrices": "De 45 € à 125 €",
     "nbStars": "1",
     "lat": "46.124680000000",
-    "lng": "3.419270000000"
+    "lng": "3.419270000000",
+    "address": "Vichy"
   },
   {
     "id": 121,
@@ -909,7 +965,8 @@
     "restaurantPrices": "De 45 € à 95 €",
     "nbStars": "1",
     "lat": "46.428462126214",
-    "lng": "4.275858549566"
+    "lng": "4.275858549566",
+    "address": "Charolles"
   },
   {
     "id": 122,
@@ -925,7 +982,8 @@
     "restaurantPrices": "De 82 € à 215 €",
     "nbStars": "3",
     "lat": "46.908145940000",
-    "lng": "4.753113440000"
+    "lng": "4.753113440000",
+    "address": "Chagny"
   },
   {
     "id": 123,
@@ -941,7 +999,8 @@
     "restaurantPrices": "De 110 € à 330 €",
     "nbStars": "3",
     "lat": "44.917860000000",
-    "lng": "4.885470000000"
+    "lng": "4.885470000000",
+    "address": "Valence"
   },
   {
     "id": 127,
@@ -957,7 +1016,8 @@
     "restaurantPrices": "De 75 € à 215 €",
     "nbStars": "2",
     "lat": "44.187070000000",
-    "lng": "0.797310000000"
+    "lng": "0.797310000000",
+    "address": "Puymirol"
   },
   {
     "id": 128,
@@ -973,7 +1033,8 @@
     "restaurantPrices": "De 55 € à 160 €",
     "nbStars": "1",
     "lat": "43.752234950000",
-    "lng": "7.444793400000"
+    "lng": "7.444793400000",
+    "address": "Roquebrune-Cap-Martin"
   },
   {
     "id": 131,
@@ -982,14 +1043,15 @@
     "postalCode": "75002",
     "chef": "Shinichi Sato",
     "url": "https://www.relaischateaux.com/fr/france/passage53-paris",
-    "priceRange": "undefined",
+    "priceRange": "",
     "imageUrl": "https://media.relaischateaux.com/public/hash/9ec1b101b252b20f68f70c25147626d59a142aba",
     "description": "",
     "restaurantUrl": "https://restaurant.michelin.fr//2ezpxm7/passage-53-paris-02",
     "restaurantPrices": "De 120 € à 240 €",
     "nbStars": "2",
     "lat": "48.871280000000",
-    "lng": "2.341880000000"
+    "lng": "2.341880000000",
+    "address": "Paris"
   },
   {
     "id": 133,
@@ -1005,7 +1067,8 @@
     "restaurantPrices": "De 59 € à 127 €",
     "nbStars": "2",
     "lat": "43.778860000000",
-    "lng": "-1.217580000000"
+    "lng": "-1.217580000000",
+    "address": "Magescq"
   },
   {
     "id": 134,
@@ -1014,14 +1077,15 @@
     "postalCode": "30128",
     "chef": "Michel Kayser",
     "url": "https://www.relaischateaux.com/fr/france/alexandre-gard-garons",
-    "priceRange": "undefined",
+    "priceRange": "",
     "imageUrl": "https://media.relaischateaux.com/public/hash/f3aa031712abdb06a8349e12caed936f81a28fa1",
     "description": "",
     "restaurantUrl": "https://restaurant.michelin.fr//2a57m2j/alexandre-garons",
     "restaurantPrices": "De 52 € à 118 €",
     "nbStars": "2",
     "lat": "43.768550000000",
-    "lng": "4.422750000000"
+    "lng": "4.422750000000",
+    "address": "Garons"
   },
   {
     "id": 135,
@@ -1030,14 +1094,15 @@
     "postalCode": "17000",
     "chef": "Christopher Coutanceau",
     "url": "https://www.relaischateaux.com/fr/france/coutanceau-charente-maritime-la-rochelle",
-    "priceRange": "undefined",
+    "priceRange": "",
     "imageUrl": "https://media.relaischateaux.com/public/hash/fbc86926021736b3062f9859bbdb5eb48340c290",
     "description": "",
     "restaurantUrl": "https://restaurant.michelin.fr//2apfrj5/christopher-coutanceau-la-rochelle",
     "restaurantPrices": "De 68 € à 165 €",
     "nbStars": "2",
     "lat": "46.155342970000",
-    "lng": "-1.159561350000"
+    "lng": "-1.159561350000",
+    "address": "La Rochelle"
   },
   {
     "id": 136,
@@ -1046,14 +1111,15 @@
     "postalCode": "76000",
     "chef": "Gilles Tournadre",
     "url": "https://www.relaischateaux.com/fr/france/gill-seine-maritime-rouen",
-    "priceRange": "undefined",
+    "priceRange": "",
     "imageUrl": "https://media.relaischateaux.com/public/hash/b90dc663f2a8418351c0598c65e7e937af246bdc",
     "description": "",
     "restaurantUrl": "https://restaurant.michelin.fr//2aqe7bm/gill-rouen",
     "restaurantPrices": "De 40 € à 145 €",
     "nbStars": "2",
     "lat": "49.438640000000",
-    "lng": "1.090460000000"
+    "lng": "1.090460000000",
+    "address": "Rouen"
   },
   {
     "id": 139,
@@ -1062,14 +1128,15 @@
     "postalCode": "06500",
     "chef": "Mauro Colagreco",
     "url": "https://www.relaischateaux.com/fr/france/mirazur-alpes-maritimes-menton",
-    "priceRange": "undefined",
+    "priceRange": "",
     "imageUrl": "https://media.relaischateaux.com/public/hash/b3cfc022a562d79cdc77bd3974ef1bc7b3690926",
     "description": "",
     "restaurantUrl": "https://restaurant.michelin.fr//2d440f7/mirazur-menton",
     "restaurantPrices": "De 160 € à 260 €",
     "nbStars": "3",
     "lat": "43.786050000000",
-    "lng": "7.528120000000"
+    "lng": "7.528120000000",
+    "address": "Menton"
   },
   {
     "id": 141,
@@ -1085,7 +1152,8 @@
     "restaurantPrices": "De 92 € à 155 €",
     "nbStars": "2",
     "lat": "44.844265000000",
-    "lng": "3.001240000000"
+    "lng": "3.001240000000",
+    "address": "Chaudes-Aigues"
   },
   {
     "id": 145,
@@ -1101,7 +1169,8 @@
     "restaurantPrices": "De 140 € à 250 €",
     "nbStars": "3",
     "lat": "46.010030000000",
-    "lng": "3.993190000000"
+    "lng": "3.993190000000",
+    "address": "Ouches"
   },
   {
     "id": 146,
@@ -1117,7 +1186,8 @@
     "restaurantPrices": "De 76 € à 120 €",
     "nbStars": "1",
     "lat": "45.762730000000",
-    "lng": "4.825280000000"
+    "lng": "4.825280000000",
+    "address": "Lyon"
   },
   {
     "id": 149,
@@ -1133,6 +1203,7 @@
     "restaurantPrices": "De 98 € à 249 €",
     "nbStars": "2",
     "lat": "45.889010000000",
-    "lng": "6.172120000000"
+    "lng": "6.172120000000",
+    "address": "Veyrier-du-Lac"
   }
 ]

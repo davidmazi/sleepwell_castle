@@ -1,6 +1,7 @@
 const castle = require("../scraping/castle.js");
 const michelin = require("../scraping/michelin.js");
 var fs = require("fs");
+
 console.log("debut");
 
 const hotelsJSON = castle.getHotelsJSON();
@@ -10,7 +11,6 @@ fs.writeFileSync(
   "../JSONFiles/starredRelaisChateaux.json",
   JSON.stringify(starredHotels)
 );
-
 function findMutualChefsAndPCs(hotelsList, michelinsList) {
   var starredHotels = [];
   for (var i = 0; i < hotelsList.length; i++) {
@@ -33,11 +33,13 @@ function findMutualChefsAndPCs(hotelsList, michelinsList) {
           restaurantPrices: michelinsList[j].priceRange,
           nbStars: michelinsList[j].nbStars,
           lat: michelinsList[j].lat,
-          lng: michelinsList[j].lng
+          lng: michelinsList[j].lng,
+          address: hotelsList[i].address
         });
       }
     }
   }
+
   return starredHotels;
 }
 

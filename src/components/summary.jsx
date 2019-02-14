@@ -11,7 +11,7 @@ import michelinLogo from "../logos/michelin.png";
 class Summary extends Component {
   state = {
     hotelName: this.props.summary.hotelName,
-    postalCode: this.props.summary.postalCode,
+    address: this.props.summary.address,
     hotelUrl: this.props.summary.hotelUrl,
     imageUrl: this.props.summary.imageUrl,
     description: this.props.summary.description,
@@ -129,7 +129,7 @@ class Summary extends Component {
               <Badge variant="warning">Contact Hotel</Badge>
             )}
           </ListGroupItem>
-          <ListGroupItem>Postal Code : {this.state.postalCode}</ListGroupItem>
+          <ListGroupItem>Address : {this.state.address}</ListGroupItem>
         </ListGroup>
         <Card.Footer variant="info">
           <Button

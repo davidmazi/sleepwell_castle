@@ -57,7 +57,12 @@ function fillHotelsList(url) {
         .find("li")
         .each(function() {
           let data = $(this);
-          let url = String(data.find("a").attr("href"));
+          let url = String(
+            data
+              .find("a")
+              .first()
+              .attr("href")
+          );
           let name = data
             .find("a")
             .first()
@@ -77,7 +82,8 @@ function fillHotelsList(url) {
             url: url,
             imageUrl: "",
             priceRange: "",
-            description: ""
+            description: "",
+            address: ""
           });
         });
       resolve(hotelsList);
@@ -95,7 +101,7 @@ function fillHotelInfo(url, index) {
       } else if (res.statusCode !== 200) {
         err = new Error("Unexpected status code : " + res.statusCode);
         err.res = res;
-        console.log(res.statusCode);
+        console.log(err.message);
         return reject(err);
       }
 
@@ -117,13 +123,20 @@ function fillHotelInfo(url, index) {
           hotelsList[index].description = desc.trim();
         });
 
-      $(".ajaxPages")
-        .find('[itemprop="priceRange"]')
+      $('meta[itemprop="priceRange"]')
         .first()
         .each(function() {
           let data = $(this);
           let pricerange = String(data.attr("content"));
           hotelsList[index].priceRange = pricerange;
+        });
+
+      $('span[itemprop="addressLocality"]')
+        .first()
+        .each(function() {
+          let data = $(this);
+          let address = data.text();
+          hotelsList[index].address = address;
         });
 
       $("head")

@@ -1,14 +1,12 @@
 // Loads the information of all the Michelin starred restaurants
-
-var Promise = require("promise");
-var request = require("request");
-var cheerio = require("cheerio");
-var fs = require("fs");
+const Promise = require("promise");
+const request = require("request");
+const cheerio = require("cheerio");
+const fs = require("fs");
 
 var promisesList = [];
 var indivPromisesList = [];
 var restaurantsList = [];
-var scrapingRound = 1;
 // var proxyUrl = 'https://lit-plateau-31117.herokuapp.com/';
 
 function createPromises() {
@@ -32,7 +30,6 @@ function createIndividualPromises() {
         fillRestaurantInfo(/*proxyUrl + */ restaurantURL, i)
       );
       console.log("Added url of " + i + "th restaurant to the promises list");
-
       resolve();
     }
   });
@@ -65,7 +62,8 @@ function fillRestaurantsList(url) {
           nbStars: "",
           priceRange: "",
           lat: "",
-          lng: ""
+          lng: "",
+          address: ""
         });
       });
       resolve(restaurantsList);
@@ -132,7 +130,6 @@ function fillRestaurantInfo(url, index) {
           let data = $(this);
           let lat = data.attr("content");
           restaurantsList[index].lat = String(lat);
-          console.log(lat);
         });
 
       $('meta[itemprop="longitude"]')
@@ -141,7 +138,6 @@ function fillRestaurantInfo(url, index) {
           let data = $(this);
           let lng = data.attr("content");
           restaurantsList[index].lng = String(lng);
-          console.log(lng);
         });
 
       $(

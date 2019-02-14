@@ -23,8 +23,7 @@ class HotelCard extends Component {
     summaryVisible: false,
     restaurantPrices: this.props.hotelCard.restaurantPrices,
     nbStars: this.props.hotelCard.nbStars,
-    lat: this.props.hotelCard.lat,
-    lng: this.props.hotelCard.lng
+    address: this.props.hotelCard.address
   };
 
   handleSelect(tab) {
@@ -60,12 +59,13 @@ class HotelCard extends Component {
       hotelUrl: this.state.url,
       imageUrl: this.state.imageUrl,
       description: this.state.description,
-      priceRange: this.state.priceRange
+      priceRange: this.state.priceRange,
+      address: this.state.address
     };
     const restaurant = {
       id: this.state.id,
       restaurantName: this.state.restaurantName,
-      postalCode: this.state.postalCode,
+      address: this.state.address,
       chef: this.state.chef,
       imageUrl: this.state.imageUrl,
       restaurantUrl: this.state.restaurantUrl,
@@ -75,7 +75,7 @@ class HotelCard extends Component {
     const summary = {
       id: this.state.id,
       hotelName: this.state.hotelName,
-      postalCode: this.state.postalCode,
+      address: this.state.address,
       hotelUrl: this.state.url,
       imageUrl: this.state.imageUrl,
       description: this.state.description,
@@ -94,7 +94,6 @@ class HotelCard extends Component {
           <Card.Header>
             <Nav
               fill
-              className="info"
               variant="pills"
               defaultActiveKey="#hotel"
               onSelect={tab => this.handleSelect(tab)}

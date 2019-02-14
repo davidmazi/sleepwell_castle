@@ -10,7 +10,7 @@ import michelinLogo from "../logos/michelin.png";
 class Restaurant extends Component {
   state = {
     restaurantName: this.props.restaurant.restaurantName,
-    postalCode: this.props.restaurant.postalCode,
+    address: this.props.restaurant.address,
     chef: this.props.restaurant.chef,
     restaurantUrl: this.props.restaurant.restaurantUrl,
     imageUrl: this.props.restaurant.imageUrl,
@@ -55,7 +55,7 @@ class Restaurant extends Component {
               <Badge variant="warning">Contact restaurant</Badge>
             )}
           </ListGroupItem>
-          <ListGroupItem>Postal Code : {this.state.postalCode}</ListGroupItem>
+          <ListGroupItem>Address : {this.state.address}</ListGroupItem>
         </ListGroup>
         <Card.Footer variant="info">
           <Button
