@@ -133,11 +133,9 @@ export class HomePage extends Component {
           b.lng
         );
         if (distanceA < distanceB) {
-          console.log("smal");
           return -1;
         }
         if (distanceA > distanceB) {
-          console.log("big");
           return 1;
         }
         return 0;
@@ -284,7 +282,7 @@ export class HomePage extends Component {
             <div style={{ height: "100vh", width: "100%" }}>
               <GoogleMapReact
                 bootstrapURLKeys={{
-                  key: "AIzaSyB64tTyWGKR9k7E1kEIpuPwR4spXgyP7R8"
+                  key: process.env.REACT_APP_GOOGLE_KEY
                 }}
                 defaultCenter={{ lat: 46.795688, lng: 2.229444 }}
                 defaultZoom={6}
