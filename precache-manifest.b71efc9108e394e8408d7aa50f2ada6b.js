@@ -8,15 +8,15 @@ self.__precacheManifest = [
     "url": "/sleepwell_castle/static/js/runtime~main.f41ed36e.js"
   },
   {
-    "revision": "208d0116c892c213f5b1",
-    "url": "/sleepwell_castle/static/js/main.208d0116.chunk.js"
+    "revision": "54def7a2416d3b22cef6",
+    "url": "/sleepwell_castle/static/js/main.54def7a2.chunk.js"
   },
   {
     "revision": "9168a95f4c8166e9e47f",
     "url": "/sleepwell_castle/static/js/2.9168a95f.chunk.js"
   },
   {
-    "revision": "208d0116c892c213f5b1",
+    "revision": "54def7a2416d3b22cef6",
     "url": "/sleepwell_castle/static/css/main.4d9cc7fb.chunk.css"
   },
   {
@@ -24,7 +24,7 @@ self.__precacheManifest = [
     "url": "/sleepwell_castle/static/css/2.963435d8.chunk.css"
   },
   {
-    "revision": "df9d660e56ab2b22ab994c13418c6015",
+    "revision": "b5ba5b6a2fdcd1a3a34a52d27b688912",
     "url": "/sleepwell_castle/index.html"
   }
 ];

@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/sleepwell_castle/precache-manifest.75a70adb57b650e9b4457ddbb7bf0f51.js"
+  "/sleepwell_castle/precache-manifest.b71efc9108e394e8408d7aa50f2ada6b.js"
 );
 
 workbox.clientsClaim();
