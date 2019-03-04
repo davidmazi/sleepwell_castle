@@ -3,13 +3,13 @@ var request = require("request");
 var cheerio = require("cheerio");
 var fs = require("fs");
 
-var promiseList = [];
-var indivPromisesList = [];
-var hotelsList = [];
-var scrapingRound = 1;
-// var proxyUrl = 'https://lit-plateau-31117.herokuapp.com/';
-
 module.exports.scrapeRestaurants = function() {
+  var promiseList = [];
+  var indivPromisesList = [];
+  var hotelsList = [];
+  var scrapingRound = 1;
+  // var proxyUrl = 'https://lit-plateau-31117.herokuapp.com/';
+
   function createPromise() {
     let url = "https://www.relaischateaux.com/fr/site-map/etablissements";
     promiseList.push(fillHotelsList(/*proxyUrl + */ url));
